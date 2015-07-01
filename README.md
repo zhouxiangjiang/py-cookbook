@@ -1,2 +1,2 @@
-# py-cookbook
-Python Cookbook (Python 菜谱)
+# Python菜谱
+支持Python v3.4.3+.
