@@ -1,7 +1,7 @@
 # 入门
 Python 3.4.3+
 
-参考 [Python官方文档](https://docs.python.org/3/) ([中文翻译版](http://python.usyiyi.cn/python_343/tutorial/))
+参考 [Python 3 官方文档](https://docs.python.org/3/) ([中文翻译版](http://python.usyiyi.cn/python_343/tutorial/))
 
 ## 代码编辑器
 
