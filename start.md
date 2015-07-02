@@ -7,7 +7,7 @@ Python 3.4.3+
 
 - Notepad++ (Windows)
 
-编码方式: `UTF-8`.
+编码方式: 无BOM`UTF-8`.
 
 ## Hello World
 
