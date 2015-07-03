@@ -80,6 +80,8 @@ assert i['a'] = 1
 ```python
 if True:
     print('True')
+elif False:
+    print('False')
 else:
     print('False')
 
