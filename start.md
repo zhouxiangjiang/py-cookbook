@@ -41,6 +41,9 @@ i = 1.23e9      # 科学计数法浮点数 float
 i = b'abc'      # 二进制 bytes
 i = True        # 布尔值 真
 i = False       # 布尔值 假
+record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
+_, email, *phone_numbers = record
+email           #打印 'dave@example.com'
 ```
 
 ## 数据结构
@@ -60,7 +63,6 @@ i.append(7)
 del i[6]
 i.sort() ##对列表进行原址排序
 
-##列表当作队列使用
 
 # 元组
 i = (1, 2, 3, 4, 5, 6)
@@ -78,19 +80,19 @@ x, y, z = t
 
 #集合
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-print(basket)  ##打印{'orange', 'banana', 'pear', 'apple'}
-'orange' in basket   ##打印True
+print(basket)        #打印{'orange', 'banana', 'pear', 'apple'}
+'orange' in basket   #打印True
 
 a = set('abracadabra') 
 b = set('alacazam')
-a   ##打印{'a', 'r', 'b', 'c', 'd'}
+a       #打印{'a', 'r', 'b', 'c', 'd'}
 a - b   # letters in a but not in b
 a | b   # letters in either a or b
 a & b   # letters in both a and b
 a ^ b   # letters in a or b but not both
 
 a = {x for x in 'abracadabra' if x not in 'abc'}
-a  ##打印 {'r', 'd'}
+a       #打印 {'r', 'd'}
 
 
 # 字典
