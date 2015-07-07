@@ -115,6 +115,21 @@ if len(seq) != 0   # Worse!!!
 if not len(seq)    # Worse!!!
 ```
 
+## 循环遍历
+
+```python
+# 遍历且更新可变序列（列表）
+assert isinstance(words, list)
+for word in words[:]:
+    if len(word) > 6:
+        words.insert(0, word)
+
+# 遍历字典
+assert isinstance(mydict, dict)
+for key, value in mydict.items(): # Python 2: mydict.iteritems()
+    pass
+```
+
 ## 定义函数
 
 ```python
