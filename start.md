@@ -129,8 +129,9 @@ for i in range(3):
 def f():
     return 0
 ```
-#函数的默认参数值
 
+#函数的默认参数值
+```
 def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
     while True:
         ok = input(prompt)
@@ -161,9 +162,9 @@ def make_incrementor(n):
     return lambda x: x + n
 	
 f = make_incrementor(42)
-f(0) ##打印42
+f(0) 			##打印42
 
-
+```
 
 ## 面向对象 (OOP)
 
