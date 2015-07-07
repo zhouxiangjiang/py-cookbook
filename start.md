@@ -133,6 +133,27 @@ for key, value in mydict.items(): # Python 2: mydict.iteritems()
 ## 定义函数
 
 ```python
+'''Function Annotations (Python 3 Only)
+
+    The Python interpreter does not attach any semantic meaning to the attached
+    annotations. They are not type checks, nor do they make Python behave any
+    differently than it did before. However, they might give useful hints to
+    others reading the source code about what you had in mind. Third-party
+    tools and frameworks might also attach semantic meaning to the annotations.
+
+    Although you can attach any kind of object to a function as an annotation
+    (e.g., numbers, strings, instances, etc.), classes or strings often seem to
+    make the most sense.
+
+    Function annotations are merely stored in a function’s `__annotations__`
+    attribute.
+
+    For example:
+
+        def f(x:int, y:int) -> int:
+            return x + y
+'''
+
 def f():
     return 0
 ```
