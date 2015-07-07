@@ -78,12 +78,12 @@ assert i['a'] = 1
 ## 控制流
 
 ```python
-if True:
-    print('True')
-elif False:
-    print('False')
+if a == 1:
+    print('a == 1')
+elif a == 2:
+    print('a == 2')
 else:
-    print('False')
+    print('a != 1 and a != 2')
 
 i = 0
 while i<10:
@@ -92,6 +92,27 @@ while i<10:
 
 for i in range(3):
     print(i)
+```
+
+## 条件判断
+
+```python
+# None 判断
+if a is None
+if a is not None
+if not a is None  # Bad!!!
+
+# 布尔值判断
+if a
+if a == True      # Bad!!!
+if a is True      # Worse!!!
+
+# 空序列（字符串、列表、元组）判断
+# 空序列为false
+if seq
+if len(seq)        # Bad!!!
+if len(seq) != 0   # Worse!!!
+if not len(seq)    # Worse!!!
 ```
 
 ## 定义函数

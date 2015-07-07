@@ -122,23 +122,6 @@ import sys, os
 - 编程建议
 
 ```python
-# None 判断
-if a is None
-if a is not None
-if not a is None  # Bad!!!
-
-# 布尔值判断
-if a
-if a == True      # Bad!!!
-if a is True      # Worse!!!
-
-# 空序列（字符串、列表、元组）判断
-# 空序列为false
-if seq
-if len(seq)        # Bad!!!
-if len(seq) != 0   # Worse!!!
-if not len(seq)    # Worse!!!
-
 # 尽量使用`.join()`方法连接字符串
 c = ''.join(['a','b'])
 c = 'a' + 'b'          # JPython版本中运行效率很低!!!
