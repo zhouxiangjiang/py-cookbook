@@ -58,6 +58,9 @@ assert i[::2] == [2]
 assert i[:] == [1, 2, 3, 4, 5, 6]  ## 复制列表
 i.append(7)
 del i[6]
+i.sort() ##对列表进行原址排序
+
+##列表当作队列使用
 
 # 元组
 i = (1, 2, 3, 4, 5, 6)
@@ -68,6 +71,27 @@ assert i[1:3] == (2, 3)
 assert i[1:] == (2, 3, 4, 5, 6)
 assert i[:3] == (1, 2, 3)
 assert i[::2] == (2,)
+
+len(i)
+t = 12345, 54321, 'hello!'
+x, y, z = t
+
+#集合
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)  ##打印{'orange', 'banana', 'pear', 'apple'}
+'orange' in basket   ##打印True
+
+a = set('abracadabra') 
+b = set('alacazam')
+a   ##打印{'a', 'r', 'b', 'c', 'd'}
+a - b   # letters in a but not in b
+a | b   # letters in either a or b
+a & b   # letters in both a and b
+a ^ b   # letters in a or b but not both
+
+a = {x for x in 'abracadabra' if x not in 'abc'}
+a  ##打印 {'r', 'd'}
+
 
 # 字典
 i = {'a': 1, 'b': 2}
@@ -94,12 +118,50 @@ for i in range(3):
     print(i)
 ```
 
-## 定义函数
+## 函数
 
 ```python
+
+#定义函数
+
 def f():
     return 0
 ```
+#函数的默认参数值
+
+def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nop', 'nope'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            raise OSError('uncooperative user')
+        print(complaint)
+		
+PS：函数的默认值只计算一次。
+def f(a, L=[]):
+    L.append(a)
+    return L
+
+print(f(1))
+print(f(2))
+print(f(3))
+这将会打印
+[1]
+[1, 2]
+[1, 2, 3]
+	
+#lambda 表达式
+def make_incrementor(n):
+    return lambda x: x + n
+	
+f = make_incrementor(42)
+f(0) ##打印42
+
+
 
 ## 面向对象 (OOP)
 
