@@ -3,7 +3,7 @@
 
 ## The Zen of Python （Python之禅）
 
-在Python Shell里输入 `import this`
+在Python Shell里输入 `import this` 或者参考[PEP 20](http://legacy.python.org/dev/peps/pep-0020/)
 
 > Beautiful is better than ugly. 优美胜于丑陋（Python 以编写优美的代码为目标）
 >
