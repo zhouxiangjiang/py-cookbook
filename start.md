@@ -131,7 +131,8 @@ def f():
 ```
 
 ##函数的默认参数值
-```
+
+```python
 def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
     while True:
         ok = input(prompt)
