@@ -41,6 +41,9 @@ i = 1.23e9      # 科学计数法浮点数 float
 i = b'abc'      # 二进制 bytes
 i = True        # 布尔值 真
 i = False       # 布尔值 假
+record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
+_, email, *phone_numbers = record
+assert email == 'dave@example.com'
 ```
 
 ## 数据结构
@@ -55,9 +58,11 @@ assert i[1:3] == [2, 3]
 assert i[1:] == [2, 3, 4, 5, 6]
 assert i[:3] == [1, 2, 3]
 assert i[::2] == [2]
-assert i[:] == [1, 2, 3, 4, 5, 6]  ## 复制列表
+assert i[:] == [1, 2, 3, 4, 5, 6]  # 复制列表
 i.append(7)
 del i[6]
+i.sort()  # 进行原址排序
+
 
 # 元组
 i = (1, 2, 3, 4, 5, 6)
@@ -68,11 +73,31 @@ assert i[1:3] == (2, 3)
 assert i[1:] == (2, 3, 4, 5, 6)
 assert i[:3] == (1, 2, 3)
 assert i[::2] == (2,)
+assert len(i) == 6
+t = 12345, 54321, 'hello!'
+x, y, z = t
+
+# 集合
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+assert basket = {'orange', 'banana', 'pear', 'apple'}
+assert 'orange' in basket = True
+
+a = set('abracadabra') 
+b = set('alacazam')
+assert a == {'a', 'r', 'b', 'c', 'd'}
+a - b   # letters in a but not in b
+a | b   # letters in either a or b
+a & b   # letters in both a and b
+a ^ b   # letters in a or b but not both
+
+a = {x for x in 'abracadabra' if x not in 'abc'}
+assert a == {'r', 'd'}
+
 
 # 字典
 i = {'a': 1, 'b': 2}
 assert len(i) == 2
-assert i['a'] = 1
+assert i['a'] == 1
 ```
 
 ## 控制流
@@ -156,6 +181,28 @@ for key, value in mydict.items(): # Python 2: mydict.iteritems()
 
 def f():
     return 0
+```
+
+##函数的默认参数值
+
+```python
+# 函数的默认值只计算一次。
+def f(a, L=[]):
+    L.append(a)
+    return L
+
+assert f(1) == [1]
+assert f(2) == [1 , 2]
+assert f(3) == [1, 2, 3]
+	
+# lambda 表达式
+def make_incrementor(n):
+    return lambda x: x + n
+	
+f = make_incrementor(42)
+assert f(0) == 42
+assert f(1) == 43
+
 ```
 
 ## 面向对象 (OOP)
