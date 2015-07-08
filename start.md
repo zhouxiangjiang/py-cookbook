@@ -186,19 +186,7 @@ def f():
 ##函数的默认参数值
 
 ```python
-def ask_ok(prompt, retries=4, complaint='Yes or no, please!'):
-    while True:
-        ok = input(prompt)
-        if ok in ('y', 'ye', 'yes'):
-            return True
-        if ok in ('n', 'no', 'nop', 'nope'):
-            return False
-        retries = retries - 1
-        if retries < 0:
-            raise OSError('uncooperative user')
-        print(complaint)
-		
-PS：函数的默认值只计算一次。
+# 函数的默认值只计算一次。
 def f(a, L=[]):
     L.append(a)
     return L
@@ -212,7 +200,8 @@ def make_incrementor(n):
     return lambda x: x + n
 	
 f = make_incrementor(42)
-f(0) 			##打印42
+assert f(0) == 42
+assert f(1) == 43
 
 ```
 
