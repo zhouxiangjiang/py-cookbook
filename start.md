@@ -104,12 +104,12 @@ assert i['a'] = 1
 ## 控制流
 
 ```python
-if True:
-    print('True')
-elif False:
-    print('False')
+if a == 1:
+    print('a == 1')
+elif a == 2:
+    print('a == 2')
 else:
-    print('False')
+    print('a != 1 and a != 2')
 
 i = 0
 while i<10:
@@ -120,11 +120,73 @@ for i in range(3):
     print(i)
 ```
 
+<<<<<<< HEAD
 ## 函数
 
 ```python
 
 #定义函数
+=======
+## 条件判断
+
+```python
+# None 判断
+if a is None
+if a is not None
+if not a is None  # Bad!!!
+
+# 布尔值判断
+if a
+if a == True      # Bad!!!
+if a is True      # Worse!!!
+
+# 空序列（字符串、列表、元组）判断
+# 空序列为false
+if seq
+if len(seq)        # Bad!!!
+if len(seq) != 0   # Worse!!!
+if not len(seq)    # Worse!!!
+```
+
+## 循环遍历
+
+```python
+# 遍历且更新可变序列（列表）
+assert isinstance(words, list)
+for word in words[:]:
+    if len(word) > 6:
+        words.insert(0, word)
+
+# 遍历字典
+assert isinstance(mydict, dict)
+for key, value in mydict.items(): # Python 2: mydict.iteritems()
+    pass
+```
+
+## 定义函数
+
+```python
+'''Function Annotations (Python 3 Only)
+
+    The Python interpreter does not attach any semantic meaning to the attached
+    annotations. They are not type checks, nor do they make Python behave any
+    differently than it did before. However, they might give useful hints to
+    others reading the source code about what you had in mind. Third-party
+    tools and frameworks might also attach semantic meaning to the annotations.
+
+    Although you can attach any kind of object to a function as an annotation
+    (e.g., numbers, strings, instances, etc.), classes or strings often seem to
+    make the most sense.
+
+    Function annotations are merely stored in a function’s `__annotations__`
+    attribute.
+
+    For example:
+
+        def f(x:int, y:int) -> int:
+            return x + y
+'''
+>>>>>>> 90e56af137243635231bd4ffe79bdc6901f38eb5
 
 def f():
     return 0
