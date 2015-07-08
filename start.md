@@ -84,20 +84,20 @@ assert 'orange' in basket = True
 
 a = set('abracadabra') 
 b = set('alacazam')
-assert a = {'a', 'r', 'b', 'c', 'd'}
+assert a == {'a', 'r', 'b', 'c', 'd'}
 a - b   # letters in a but not in b
 a | b   # letters in either a or b
 a & b   # letters in both a and b
 a ^ b   # letters in a or b but not both
 
 a = {x for x in 'abracadabra' if x not in 'abc'}
-assert a = {'r', 'd'}
+assert a == {'r', 'd'}
 
 
 # 字典
 i = {'a': 1, 'b': 2}
 assert len(i) == 2
-assert i['a'] = 1
+assert i['a'] == 1
 ```
 
 ## 控制流
@@ -203,15 +203,11 @@ def f(a, L=[]):
     L.append(a)
     return L
 
-print(f(1))
-print(f(2))
-print(f(3))
-这将会打印
-[1]
-[1, 2]
-[1, 2, 3]
+assert f(1) == [1]
+assert f(2) == [1 , 2]
+assert f(3) == [1, 2, 3]
 	
-#lambda 表达式
+# lambda 表达式
 def make_incrementor(n):
     return lambda x: x + n
 	
