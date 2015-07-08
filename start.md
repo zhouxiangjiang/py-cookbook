@@ -43,7 +43,7 @@ i = True        # 布尔值 真
 i = False       # 布尔值 假
 record = ('Dave', 'dave@example.com', '773-555-1212', '847-555-1212')
 _, email, *phone_numbers = record
-email           #打印 'dave@example.com'
+assert email == 'dave@example.com'
 ```
 
 ## 数据结构
@@ -58,10 +58,10 @@ assert i[1:3] == [2, 3]
 assert i[1:] == [2, 3, 4, 5, 6]
 assert i[:3] == [1, 2, 3]
 assert i[::2] == [2]
-assert i[:] == [1, 2, 3, 4, 5, 6]  ## 复制列表
+assert i[:] == [1, 2, 3, 4, 5, 6]  # 复制列表
 i.append(7)
 del i[6]
-i.sort() ##对列表进行原址排序
+i.sort()  # 进行原址排序
 
 
 # 元组
@@ -73,26 +73,25 @@ assert i[1:3] == (2, 3)
 assert i[1:] == (2, 3, 4, 5, 6)
 assert i[:3] == (1, 2, 3)
 assert i[::2] == (2,)
-
-len(i)
+assert len(i) == 6
 t = 12345, 54321, 'hello!'
 x, y, z = t
 
-#集合
+# 集合
 basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
-print(basket)        #打印{'orange', 'banana', 'pear', 'apple'}
-'orange' in basket   #打印True
+assert basket = {'orange', 'banana', 'pear', 'apple'}
+assert 'orange' in basket = True
 
 a = set('abracadabra') 
 b = set('alacazam')
-a       #打印{'a', 'r', 'b', 'c', 'd'}
+assert a = {'a', 'r', 'b', 'c', 'd'}
 a - b   # letters in a but not in b
 a | b   # letters in either a or b
 a & b   # letters in both a and b
 a ^ b   # letters in a or b but not both
 
 a = {x for x in 'abracadabra' if x not in 'abc'}
-a       #打印 {'r', 'd'}
+assert a = {'r', 'd'}
 
 
 # 字典
@@ -120,13 +119,6 @@ for i in range(3):
     print(i)
 ```
 
-<<<<<<< HEAD
-## 函数
-
-```python
-
-#定义函数
-=======
 ## 条件判断
 
 ```python
@@ -186,7 +178,6 @@ for key, value in mydict.items(): # Python 2: mydict.iteritems()
         def f(x:int, y:int) -> int:
             return x + y
 '''
->>>>>>> 90e56af137243635231bd4ffe79bdc6901f38eb5
 
 def f():
     return 0
