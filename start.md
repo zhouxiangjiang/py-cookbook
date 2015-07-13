@@ -168,6 +168,7 @@ for key, value in mydict.items(): # Python 2: mydict.iteritems()
 #
 # @see enumerate()
 seq = [1, 2, 3, 4, 5, 6]
+start_index = 1
 for index, value in enumerate(seq):
     assert seq[index] == value
 for index, value in enumerate(seq, start=start_index):
