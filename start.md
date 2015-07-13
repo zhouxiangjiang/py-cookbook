@@ -153,6 +153,20 @@ for word in words[:]:
 assert isinstance(mydict, dict)
 for key, value in mydict.items(): # Python 2: mydict.iteritems()
     pass
+
+# 遍历序列（列表），同时获取索引和值
+#
+# 内嵌函数enumerate()的参考实现
+# def enumerate(sequence, start=0):
+#    n = start
+#    for elem in sequence:
+#        yield n, elem
+#        n += 1
+seq = [1, 2, 3, 4, 5, 6]
+for index, value in enumerate(seq):
+    assert seq[index] == value
+for index, value in enumerate(seq, start=start_index):
+    assert seq[index-start_index] == value
 ```
 
 ## 定义函数
