@@ -174,7 +174,33 @@ for index, value in enumerate(seq, start=start_index):
     assert seq[index-start_index] == value
 
 
-# 遍历多个序列（列表），无需嵌套循环（代码可读性）
+# 同时遍历多个序列（列表）
+#
+# @see zip()
+# @see itertools.zip_longest()
+# NOTE: itertools.izip_longest() in Python 2
+seq1 = [1, 2, 3, 4, 5, 6]
+seq2 = ['a', 'b', 'c']
+
+for value1, value2 in zip(seq1, seq2):
+    assert value1 in seq1
+    assert value2 in seq2
+    assert seq1.index(value1) == seq2.index(value2)
+
+import itertools
+for value1, value2 in itertools.zip_longest(seq1, seq2):
+    assert value1 in seq1
+    if value2 not in seq2:
+        assert value2 is None and seq1.index(value1) == len(seq1) - 1
+
+fillvalue = 0
+for value1, value2 in itertools.zip_longest(seq1, seq2, fillvalue=fillvalue):
+    assert value1 in seq1
+    if value2 not in seq2:
+        assert value2 == fillvalue and seq1.index(value1) == len(seq1) - 1
+
+
+# 依次遍历多个序列（列表），无需嵌套循环（代码可读性）
 #
 # 函数chain()的参考实现：
 #
