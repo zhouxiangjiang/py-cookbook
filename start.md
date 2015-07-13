@@ -149,24 +149,44 @@ for word in words[:]:
     if len(word) > 6:
         words.insert(0, word)
 
+
 # 遍历字典
 assert isinstance(mydict, dict)
 for key, value in mydict.items(): # Python 2: mydict.iteritems()
     pass
 
+
 # 遍历序列（列表），同时获取索引和值
 #
-# 内嵌函数enumerate()的参考实现
-# def enumerate(sequence, start=0):
-#    n = start
-#    for elem in sequence:
-#        yield n, elem
-#        n += 1
+# 内嵌函数enumerate()的参考实现：
+#
+#    def enumerate(sequence, start=0):
+#        n = start
+#        for elem in sequence:
+#            yield n, elem
+#            n += 1
+#
+# @see enumerate()
 seq = [1, 2, 3, 4, 5, 6]
 for index, value in enumerate(seq):
     assert seq[index] == value
 for index, value in enumerate(seq, start=start_index):
     assert seq[index-start_index] == value
+
+
+# 遍历多个序列（列表），无需嵌套循环（代码可读性）
+#
+# 函数chain()的参考实现：
+#
+#     def chain(iterators):
+#         for i in iterators:
+#             yield from i
+#
+# @see itertools.chain()
+seq1 = [1, 2, 3, 4, 5, 6]
+seq2 = ['a', 'b', 'c']
+for item in itertools.chain(seq1, seq2):
+    assert item in seq1 or item in seq2
 ```
 
 ## 定义函数
